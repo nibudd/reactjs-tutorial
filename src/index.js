@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import Game from './game.js';
+import {Game} from './game.js';
   
   // ========================================
   

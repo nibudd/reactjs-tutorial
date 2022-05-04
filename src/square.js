@@ -1,4 +1,4 @@
-function Square(props) {
+export function Square(props) {
   return (
     <button
       className="square"
@@ -8,5 +8,3 @@ function Square(props) {
     </button>
   )
 }
-
-export default Square;
