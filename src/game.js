@@ -2,14 +2,16 @@ import React from 'react';
 
 import { Board } from './board.js';
 import { HistoricalMoves } from './historical-moves.js';
-import { calculateWinner, getNextMarker, getStatus } from './game-helper.js';
+import { calculateWinner, getPlayer as getPlayer, getStatus } from './game-helper.js';
 
 export class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       history: [{
+        squarePlayed: null,
         squares: Array(9).fill(null),
+        player: null,
       }],
       stepNumber: 0,
       xIsNext: true,
@@ -26,11 +28,14 @@ export class Game extends React.Component {
       return;
     }
     
-    squares[i] = getNextMarker(this.state.xIsNext);
+    const player = getPlayer(this.state.xIsNext);
+    squares[i] = player;
     
     this.setState({
       history: history.concat([{
+        squarePlayed: i,
         squares: squares,
+        player: player,
       }]),
       stepNumber: stepNumber + 1,
       xIsNext: !this.state.xIsNext,

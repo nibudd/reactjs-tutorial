@@ -19,7 +19,7 @@ export function calculateWinner(squares) {
   return null;
 }
 
-export function getNextMarker(xIsNext) {
+export function getPlayer(xIsNext) {
   return xIsNext ? "X" : "O";
 }
 
@@ -28,9 +28,7 @@ export function getStatus(squares, xIsNext) {
 
   return (
     winner ? 
-    "Winner: " + winner : 
-    'Next player: ' + getNextMarker(xIsNext)
-  );
-  
-  
+    `Winner: ${winner}`:
+    `Next Player: ${getPlayer(xIsNext)}` 
+  ); 
 }
