@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Board } from './board.js';
 import { HistoricalMoves } from './historical-moves.js';
-import { calculateWinner, getPlayer as getPlayer, getStatus } from './game-helper.js';
+import { calculateWinner, getPlayer, getStatus } from './game-helper.js';
 
 export class Game extends React.Component {
   constructor(props) {
@@ -68,6 +68,7 @@ export class Game extends React.Component {
         <div>{status}</div>
         <HistoricalMoves 
           history={history}
+          stepNumber={stepNumber}
           onClick={(move) => this.jumpToMove(move)}
         />
       </div>
