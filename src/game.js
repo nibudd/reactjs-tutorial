@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Board } from './board.js';
 import { HistoricalMoves } from './historical-moves.js';
-import { calculateWinner, getPlayer, getStatus } from './game-helper.js';
+import { findWinningSquares, calculateWinner, getPlayer, getStatus } from './game-helper.js';
 
 export class Game extends React.Component {
   constructor(props) {
@@ -60,6 +60,7 @@ export class Game extends React.Component {
     <div className="game">
       <div className="game-board">
         <Board 
+          winningSquares={findWinningSquares(current.squares)}
           squares={current.squares}
           onClick={(i) => this.handleClick(i)}
         />
