@@ -31,6 +31,10 @@ body {
     text-align: center;
     width: 34px;
   }
+
+  .square-winning {
+    background: rgb(25, 230, 6);
+  }
   
   .square:focus {
     outline: none;
@@ -47,5 +51,9 @@ body {
   
   .game-info {
     margin-left: 20px;
+  }
+
+  .selected-move {
+    font-weight: bold;
   }
   
