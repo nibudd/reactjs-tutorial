@@ -62,7 +62,7 @@ export class Game extends React.Component {
         <Board 
           winningSquares={findWinningSquares(current.squares)}
           squares={current.squares}
-          onClick={(i) => this.handleClick(i)}
+          onClick={this.handleClick.bind(this)}
         />
       </div>
       <div className="game-info">
@@ -70,7 +70,7 @@ export class Game extends React.Component {
         <HistoricalMoves 
           history={history}
           stepNumber={stepNumber}
-          onClick={(move) => this.jumpToMove(move)}
+          onClick={this.jumpToMove.bind(this)}
         />
       </div>
     </div>
