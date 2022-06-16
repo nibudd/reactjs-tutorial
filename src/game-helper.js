@@ -21,7 +21,7 @@ export function findWinningSquares(squares) {
 
 export function calculateWinner(squares) {
   const winningSquares = findWinningSquares(squares);
-  
+
   if (winningSquares) {
     const aSquare = winningSquares[0];
     return squares[aSquare];
@@ -34,8 +34,17 @@ export function getPlayer(xIsNext) {
   return xIsNext ? "X" : "O";
 }
 
+function isBoardFull(squares) {
+  const boardHasEmptySquares = squares.includes(null);
+  return !boardHasEmptySquares;
+}
+
 export function getStatus(squares, xIsNext) {
   const winner = calculateWinner(squares);
+
+  if (isBoardFull(squares)) {
+    return "Draw!";
+  }
 
   return (
     winner ? 
