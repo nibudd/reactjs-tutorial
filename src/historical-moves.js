@@ -18,7 +18,6 @@ export class HistoricalMoves extends React.Component {
           <li key={move_number}>
             <button 
               onClick={() => this.props.onClick(move_number)}
-              // className="selected-move"
               className={selectedMove ? "selected-move" : null}
             >
               {description}
